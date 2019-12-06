@@ -1,83 +1,31 @@
 <div class="page">
-  <h1 class="header">Welcome to <strong>Behavior3</strong> Editor</h1>
+  <h1 class="header">Welcome to the <strong>Behavior Tree Visual Editr</strong></h1>
 
   <div class="content">
 
-    <p class="text-justify"><strong>Behavior3</strong> Editor is an open source visual tool to create and design Behavior Trees. It provides a general solution to model agents for games and other applications, such as simulations and robotics. Behavior3 Editor uses an open - and simple - format to describe the behavior trees, thus you can adapt easily to your own library, tool or framework.</p>
-    
-    <br>
+    <p class="text-justify">A tool to make it easier to build <a href="https://hexdocs.pm/behavior_tree/BehaviorTree.html">behavior trees</a> for the <a href="https://git.corp.adobe.com/pages/BotTestingFramework/bot_army/readme.html">Bot Testing Framework</a>.</p>
 
-    <div class="row text-center">
-      <div class="col-xs-4"></div>
-      <div class="col-xs-2">
-        <a href="https://github.com/behavior3/behavior3editor/stargazers" target="_blank">
-          <i class="fa fa-heart fa-2x"></i><br>
-          Contribute
-        </a>
-      </div>
-      <div class="col-xs-2">
-        <a href="https://www.bountysource.com/teams/behavior3" target="_blank">
-          <i class="fa fa-bitcoin fa-2x"></i><br>
-          Contribute
-        </a>
-      </div>
-      <div class="col-xs-4"></div>
-    </div>
+    <p>This tool was adapted from the existing <a href="https://github.com/behavior3/behavior3editor/">Behavior3 Editor</a></p>
 
-    <br>
-
-    <div class="panel panel-default">
-      <div class="panel-heading"><strong>SOFTWARE INFO</strong></div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Software version:</strong></div>
-            <div class="col-xs-8">[BUILD_VERSION]</div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Build date:</strong></div>
-            <div class="col-xs-8">[BUILD_DATE]</div>
-          </div>
-        </li>
+    <h3 class="header">Basic usage</h3>
+      <ul>
+        <li>Drag nodes from the left sidebar, drag the node "handles" to connect nodes</li>
+        <li>Press "a" to auto organize the tree</li>
+        <li>Make new trees under "Project/New tree" or hover over "Trees" side bar divider</li>
+        <li>You can drag the tree names just like other nodes to nest trees</li>
+        <li>You must name one tree "Root" (the name of the tree is set via the title of the tree's root node)</li>
+        <li>Shift+click to drag (or middle mouse button)</li>
+        <li>Del key deletes a node</li>
+        <li>Each node has details/instructions in its description</li>
+        <li>Be sure to save via the menu icon or cntr+s or "Project/Save project"</li>
+        <li>You can create custom nodes via "Project/New node" or the Nodes sidebar divider.  Only action nodes with a "Name" of "action" can be parsed, and work just like the generic function nod</li>es.
+        <li>Using "&lt;key_name&gt;" in a node's title will render the value for that property's key</li>
       </ul>
-    </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading"><strong>LINKS</strong></div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Site:</strong></div>
-            <div class="col-xs-8"><a href="http://behavior3.com" target="_blank">http://behavior3.com</a></div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Repository:</strong></div>
-            <div class="col-xs-8"><a href="https://github.com/behavior3/behavior3editor/" target="_blank">https://github.com/behavior3/behavior3editor/</a></div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Issues:</strong></div>
-            <div class="col-xs-8"><a href="https://github.com/behavior3/behavior3editor/issues" target="_blank">https://github.com/behavior3/behavior3editor/issues</a></div>
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-xs-4"><strong>Documentation:</strong></div>
-            <div class="col-xs-8"><a href="https://github.com/behavior3/behavior3editor/wiki" target="_blank">https://github.com/behavior3/behavior3editor/wiki</a></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-<!-- 
+<!--
     <div class="row">
       <div class="col-sm-6">
-        
+
         <div class="panel panel-default">
           <div class="panel-heading"><h4><strong>What's new at v0.2.0?</strong></h4></div>
           <div class="list-group">
@@ -94,7 +42,7 @@
                 <li>Tree nodes</li>
               </ul>
             </div>
-            
+
             <div class="list-group-item text-center">
             </div>
           </div>

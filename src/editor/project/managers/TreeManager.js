@@ -12,7 +12,7 @@ b3e.project.TreeManager = function(editor, project) {
       project.addChild(tree);
       editor.trigger('treeadded', tree);
       this.select(tree);
-      
+
     } else {
       project.history._beginBatch();
       tree = new b3e.tree.Tree(editor, project);
@@ -25,7 +25,8 @@ b3e.project.TreeManager = function(editor, project) {
       var node = {
         name     : tree._id,
         title    : root.title,
-        category : 'tree', 
+        category : 'tree',
+        description: 'An instance of the tree.  You can add properties to this node and they will be available in action nodes in this tree (using syntax like `{{key}}`).  Properties defined on this node will overwrite the same property defined on the tree\'s root node.'
       };
       project.nodes.add(node, true);
 
@@ -75,7 +76,7 @@ b3e.project.TreeManager = function(editor, project) {
       project._selectedTree.visible = false;
       editor.trigger('treedeselected', project._selectedTree);
     }
-    
+
     tree.visible = true;
     project._selectedTree = tree;
     editor.trigger('treeselected', tree);

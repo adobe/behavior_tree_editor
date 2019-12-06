@@ -137,10 +137,8 @@
 
   b3e.draw.SYMBOLS = {
     'Root'        : b3e.draw.rootSymbol,
-    'Sequence'    : b3e.draw.sequenceSymbol,
-    'Priority'    : b3e.draw.prioritySymbol,
-    'MemSequence' : b3e.draw.memsequenceSymbol,
-    'MemPriority' : b3e.draw.memprioritySymbol,
+    'sequence'    : b3e.draw.sequenceSymbol,
+    'select'    : b3e.draw.prioritySymbol,
   };
 
 }());

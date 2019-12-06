@@ -12,18 +12,18 @@
     'notificationService'
   ];
 
-  function NodespanelController($scope, 
+  function NodespanelController($scope,
                                 $window,
                                 dialogService,
                                 notificationService) {
-    
+
     // HEAD //
     var vm = this;
     vm.nodes = null;
     vm.newTree = newTree;
     vm.select  = select;
     vm.remove  = remove;
-    
+
     _create();
     _activate();
     $scope.$on('$destroy', _destroy);
@@ -35,7 +35,7 @@
         composite : [],
         decorator : [],
         action    : [],
-        condition : [],
+        // condition : [],
       };
 
       var p = $window.editor.project.get();
@@ -56,7 +56,7 @@
         var root = tree.blocks.getRoot();
         vm.trees.push({
           'id'       : tree._id,
-          'name'     : root.title || 'A behavior tree',
+          'name'     : root.title || 'My tree',
           'active'   : tree===selected,
         });
       });
@@ -107,7 +107,7 @@
     function remove(id) {
       dialogService.
         confirm(
-          'Remove tree?', 
+          'Remove tree?',
           'Are you sure you want to remove this tree?\n\nNote: all blocks using this tree will be removed.'
         ).then(function() {
           var p = $window.editor.project.get();

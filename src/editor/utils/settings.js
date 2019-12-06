@@ -14,7 +14,7 @@
     zoom_min     : 0.25,
     zoom_max     : 2.0,
     zoom_step    : 0.25,
-    
+
     // EDITOR
     snap_x        : 12,
     snap_y        : 12,
@@ -31,22 +31,22 @@
     anchor_background_color : '#EFEFEF',
 
     connection_color        : '#6D6D6D',
-    root_color              : '#FFFFFF',
-    decorator_color         : '#FFFFFF',
-    composite_color         : '#FFFFFF',
-    tree_color              : '#FFFFFF',
-    action_color            : '#FFFFFF',
+    root_color              : '#AFAFAF',
+    decorator_color         : '#A4CCFB',
+    composite_color         : '#A4CCFB',
+    tree_color              : '#F7CB45',
+    action_color            : '#A3C83F',
     condition_color         : '#FFFFFF',
 
     // CONNECTION
     connection_width       : 2,
-    
+
     // ANCHOR
     anchor_border_width    : 2,
     anchor_radius          : 7,
     anchor_offset_x        : 4,
     anchor_offset_y        : 0,
-    
+
     // BLOCK
     block_border_width     : 2,
     block_root_width       : 40,
