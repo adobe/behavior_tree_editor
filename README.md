@@ -5,8 +5,11 @@ Framework](https://git.corp.adobe.com/pages/BotTestingFramework/bot_army/readme.
 based on the existing [Behavior3
 Editor](https://github.com/behavior3/behavior3editor/)
 
-![interface preview](preview.png)
+> You can access it
+[online](https://git.corp.adobe.com/pages/BotTestingFramework/behavior_tree_editor/#/dash/home).
+> Your data will be saved in your browser's local storage. Use "Project > Import > Project as JSON" and "Project > Export > Project as JSON" to load/save from/to a local source controlled .json file for running the tests.
 
+![interface preview](preview.png)
 
 ## Basic usage
 
