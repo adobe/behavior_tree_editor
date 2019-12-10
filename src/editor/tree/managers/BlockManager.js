@@ -143,20 +143,16 @@ b3e.tree.BlockManager = function(editor, project, tree) {
     for (var j=0; j<block._outConnections.length; j++) {
       block._outConnections[j]._redraw();
     }
-    
+
     if (!mustSave) project.history._lock();
 
     project.history._beginBatch();
-
-    if (block.category === 'root') {
-      project.nodes.update(tree._id, {title: block.title||'A behavior tree'});
-    }
 
     var _old = [this, this.update, [block, _oldValues]];
     var _new = [this, this.update, [block, _newValues]];
     project.history._add(new b3e.Command(_old, _new));
     project.history._endBatch();
-    
+
     if (!mustSave) project.history._unlock();
 
     editor.trigger('blockchanged', block);
