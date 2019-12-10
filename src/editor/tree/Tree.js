@@ -44,7 +44,7 @@
     this._selectionBox = new b3e.SelectionBox();
     this._overlay.addChild(this._selectionBox);
 
-    this._root = this.blocks.add('Root', 0, 0);
+    this._root = this.blocks.add('root', 0, 0);
     this._applySettings(this._editor._settings);
 
     this.view.center();

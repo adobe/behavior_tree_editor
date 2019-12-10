@@ -136,7 +136,7 @@
 
 
   b3e.draw.SYMBOLS = {
-    'Root'        : b3e.draw.rootSymbol,
+    'root'        : b3e.draw.rootSymbol,
     'sequence'    : b3e.draw.sequenceSymbol,
     'select'    : b3e.draw.prioritySymbol,
   };
