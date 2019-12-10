@@ -170,7 +170,7 @@ gulp.task('_app_html', function() {
 
 gulp.task('_app_entry', function() {
   return gulp.src(app_entry)
-             // .pipe(minifyHTML({empty:true})) 
+             // .pipe(minifyHTML({empty:true}))
              .pipe(replace('[BUILD_VERSION]', build_version))
              .pipe(replace('[BUILD_DATE]', build_date))
              .pipe(gulp.dest('build'))
@@ -216,11 +216,11 @@ gulp.task('_watch', ['_livereload'], function() {
 gulp.task('_electron', ['build'], function(cb) {
   packager({
     dir       : 'build',
-    out       : '.temp-dist',
-    name      : project.name,
-    platform  : 'linux,win32',
+    out       : 'release',
+    name      : 'Behavior Tree Editor',
+    platform  : 'darwin',
     arch      : 'all',
-    version   : '0.34.2',
+    // version   : '1.4.13',
     overwrite : true,
     asar      : true
   }, function done(err, appPath) {
@@ -228,19 +228,8 @@ gulp.task('_electron', ['build'], function(cb) {
   })
 });
 
-gulp.task('_electron_zip', ['_electron'], function() {
-  return gulp.src('.temp-dist/*')
-             .pipe(foreach(function(stream, file) {
-                var fileName = file.path.substr(file.path.lastIndexOf("/")+1);
-                gulp.src('.temp-dist/'+fileName+'/**/*')
-                    .pipe(zip(fileName+'.zip'))
-                    .pipe(gulp.dest('./dist'));
-                return stream;
-             }));
-});
-
 // COMMANDS ===================================================================
 gulp.task('build', ['_vendor', '_preload', '_app_build']);
 gulp.task('dev',   ['_vendor', '_preload', '_app_dev']);
 gulp.task('serve', ['_vendor', '_preload', '_app_dev', '_watch']);
-gulp.task('dist',  ['_electron_zip']);
+gulp.task('electron',  ['_electron']);

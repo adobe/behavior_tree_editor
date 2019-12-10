@@ -9,12 +9,13 @@
   "scripts": {
     "postinstall": "bower i",
     "build": "npm install && gulp build",
-    "deploy-web": "npm run build && gh-pages -d build"
+    "deploy-web": "npm run build && gh-pages -d build",
+    "release": "gulp electron"
   },
   "devDependencies": {
     "bower": "^1.8.8",
-    "electron-packager": "^5.1.1",
-    "electron-prebuilt": "^0.33.8",
+    "electron-packager": "^14.1.1",
+    "electron": "^7.1.3",
     "gh-pages": "^2.1.1",
     "gulp": "~3.9.0",
     "gulp-angular-templatecache": "~1.7.0",

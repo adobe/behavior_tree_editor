@@ -9,14 +9,14 @@
     '$state',
     '$window',
     'dialogService',
-    'systemService', 
+    'systemService',
     'notificationService',
     'projectModel'
   ];
 
   function ProjectsController($state,
                               $window,
-                              dialogService, 
+                              dialogService,
                               systemService,
                               notificationService,
                               projectModel) {
@@ -73,12 +73,12 @@
               var placeholder = name.replace(/\s+/g, "_").toLowerCase();
 
               dialogService
-                .saveAs(placeholder, ['.b3', '.json'])
+                .saveAs(placeholder, ['.json'])
                 .then(function(path) {
                   _newProject(path, name);
                 });
             } else {
-              var path = 'b3projects-'+b3.createUUID();  
+              var path = 'b3projects-'+b3.createUUID();
               _newProject(path, name);
             }
           });
@@ -87,8 +87,8 @@
       if ($window.editor.isDirty()) {
         dialogService
           .confirm(
-            'Leave without saving?', 
-            'If you proceed you will lose all unsaved modifications.', 
+            'Leave without saving?',
+            'If you proceed you will lose all unsaved modifications.',
             null, {closeOnConfirm: false})
           .then(doNew);
       } else {
@@ -114,17 +114,18 @@
           _openProject(path);
         } else {
           dialogService
-            .openFile(false, ['.b3', '.json'])
+            .openFile(false, ['.json'])
             .then(function(path) {
               _openProject(path);
-            });
+            })
+            .catch(function(e) {throw e;});
         }
       }
 
       if ($window.editor.isDirty()) {
         dialogService
           .confirm(
-            'Leave without saving?', 
+            'Leave without saving?',
             'If you proceed you will lose all unsaved modifications.')
           .then(doOpen);
       } else {
@@ -184,8 +185,8 @@
       if ($window.editor.isDirty()) {
         dialogService
           .confirm(
-            'Leave without saving?', 
-            'If you proceed you will lose all unsaved modifications.', 
+            'Leave without saving?',
+            'If you proceed you will lose all unsaved modifications.',
             null)
           .then(doClose);
       } else {
@@ -196,7 +197,7 @@
     function removeProject(path) {
       dialogService.
         confirm(
-          'Remove project?', 
+          'Remove project?',
           'Are you sure you want to remove this project?'
         ).then(function() {
           projectModel

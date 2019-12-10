@@ -10,8 +10,7 @@ function dialogService($window, $q, $document, nodejsService) {
     confirm       : confirm,
     prompt        : prompt,
     saveAs        : saveAs,
-    openFile      : openFile,
-    openDirectory : openDirectory
+    openFile      : openFile
   };
   return service;
 
@@ -61,7 +60,7 @@ function dialogService($window, $q, $document, nodejsService) {
     options.showCancelButton = true;
 
     return $q(function(resolve, reject) {
-      swal(options, function(val) { 
+      swal(options, function(val) {
         if (val!==false) {
           resolve(val);
         } else {
@@ -72,11 +71,11 @@ function dialogService($window, $q, $document, nodejsService) {
   }
   function saveAs(placeholder, types) {
     return $q(function(resolve, reject) {
-      var value = nodejsService.dialog.showSaveDialog({
+      var value = nodejsService.dialog.showSaveDialogSync({
         title: 'Save project as...',
-        defaultPath: placeholder + '.b3',
+        defaultPath: placeholder + '.json',
         filters : [
-          {name: 'Behavior3 File', extensions: ['b3', 'json']},
+          {name: 'JSON', extensions: ['json']},
           {name: 'All Files', extensions: ['*']}
         ]
       });
@@ -89,12 +88,11 @@ function dialogService($window, $q, $document, nodejsService) {
   }
   function openFile(multiple, types) {
     return $q(function(resolve, reject) {
-      var value = nodejsService.dialog.showOpenDialog({
+      var value = nodejsService.dialog.showOpenDialogSync({
         title: 'Open file...',
-        multiSelections: multiple,
-        properties: ['openFile'],
+        properties: ['openFile', 'multiSelections'],
         filters : [
-          {name: 'Behavior3 File', extensions: ['b3', 'json']},
+          {name: 'JSON', extensions: ['json']},
           {name: 'All Files', extensions: ['*']}
         ]
       });
@@ -103,25 +101,11 @@ function dialogService($window, $q, $document, nodejsService) {
         if (!multiple) {
           value = value[0];
         }
-        console.log(value);
         resolve(value);
       } else {
         reject();
       }
     });
   }
-  function openDirectory() {
-    return $q(function(resolve, reject) {
-      var value = nodejsService.dialog.showOpenDialog({
-        title: 'Open directory...',
-        properties: ['openDirectory']
-      });
-      if (value) {
-        resolve(value);
-      } else {
-        reject();
-      }
-    });
-  }
-  
+
 }

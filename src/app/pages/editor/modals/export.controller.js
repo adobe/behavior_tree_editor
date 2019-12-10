@@ -71,7 +71,7 @@
 
     function save() {
       dialogService
-        .saveAs(null, ['.b3', '.json'])
+        .saveAs(null, ['.json'])
         .then(function(path) {
           storageService
             .saveAsync(path, vm.pretty)

@@ -21,12 +21,12 @@ function fileStorageService(nodejsService) {
       try { data = JSON3.stringify(data); } catch (e) {}
     }
 
-    var file = fs.openSync(path+'~', 'w');
+    var file = fs.openSync(path, 'w');
     fs.writeSync(file, data);
     fs.closeSync(file);
 
     // Rename must be async to override correctly.
-    fs.rename(path+'~', path);
+    // fs.rename(path+'~', path, function(e) {throw e;});
   }
   function load(path) {
     var data = fs.readFileSync(path, 'utf-8');
@@ -34,6 +34,6 @@ function fileStorageService(nodejsService) {
     return data;
   }
   function remove(path) {
-    
+
   }
 }

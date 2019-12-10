@@ -34,6 +34,7 @@ node_modules
 bower_components
 dist
 .temp-dist
+release/
 build
 src/vendor
 cache
