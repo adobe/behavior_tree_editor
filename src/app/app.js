@@ -21,7 +21,7 @@ angular.module('app', [
                    $location,
                    $document,
                    $timeout,
-                   settingsModel, 
+                   settingsModel,
                    projectModel) {
 
     // reset path
@@ -37,7 +37,6 @@ angular.module('app', [
     projectModel
       .getRecentProjects()
       .then(function(projects) {
-        
         function closePreload() {
           $timeout(function() {
             var element = angular.element(document.getElementById('page-preload'));
@@ -53,10 +52,18 @@ angular.module('app', [
             .openProject(projects[0].path)
             .then(function() {
               closePreload();
+            })
+            .catch(function(e) {
+              console.error(e);
+              closePreload();
             });
         } else {
           closePreload();
         }
+      })
+      .catch(function(e) {
+        console.error(e);
+        closePreload();
       });
   }
 ]);

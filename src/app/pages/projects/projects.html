@@ -17,7 +17,7 @@
       <p>You don't have any project yet.</p>
       <!-- <p><button class="btn btn-success btn-lg" ng-click="projects.newProject()"><i class="fa fa-plus"></i> New project</button></p> -->
     </div>
-    
+
     <!-- IF PROJECTS -->
     <table class="table table-striped">
       <tr ng-repeat="item in projects.recentProjects track by $index" class="{'info':item.isOpen}">
@@ -28,9 +28,10 @@
             <button type="button" class="btn btn-default" ng-click="projects.editProject()"><i class="fa fa-pencil"></i> Rename</button>
             <button type="button" class="btn btn-default" ng-click="projects.closeProject()"><i class="fa fa-close"></i> Close</button>
           </div>
-          
+
           <small><em>Current project</em></small>
           <h3 class="current-project">{{item.name}}</h3>
+          <small ng-show="projects.isDesktop" class="pull-right"><em>{{item.path}}</em></small>
         </td>
         <td ng-hide="item.isOpen">
           <div class="btn-group pull-right" role="group" aria-label="...">
@@ -38,6 +39,7 @@
             <button type="button" class="btn btn-danger btn-sm" ng-click="projects.removeProject(item.path)"><i class="fa fa-trash-o"></i> Remove</button>
           </div>
           <p>{{item.name}}</p>
+          <small ng-show="projects.isDesktop" class="pull-right"><em>{{item.path}}</em></small>
         </td>
       </tr>
     </table>

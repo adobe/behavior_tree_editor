@@ -59,7 +59,7 @@
           path        : project.path,
           isOpen      : true,
         };
-        
+
         recentCache.splice(0, 0, data);
       } else {
         for (var j=0; j<recentCache.length; j++) {
@@ -106,7 +106,7 @@
         editorService.newProject();
         project.data = editorService.exportProject();
         saveProject(project)
-          .then(function() { 
+          .then(function() {
             _setProject(project);
             resolve();
           });
@@ -117,11 +117,17 @@
     }
     function saveProject(project) {
       project = project || currentProject;
-      project.data = editorService.exportProject();
-      
+
+      // remove "path" from saved data
+      var saveData = {
+        name: project.name,
+        description: project.description,
+        data: editorService.exportProject(),
+      };
+
       return $q(function(resolve, reject) {
         $window.editor.clearDirty();
-        storageService.save(project.path, project);
+        storageService.save(project.path, saveData);
         _updateRecentProjects(project);
         resolve();
       });
@@ -130,6 +136,8 @@
       return $q(function(resolve, reject) {
         try {
           var project = storageService.load(path);
+          // add "path" back onto project (it is removed from saved json)
+          project.path = path;
           editorService.openProject(project.data);
           _setProject(project);
           resolve();
@@ -144,7 +152,7 @@
         editorService.closeProject();
         _setProject(null);
         resolve();
-      }); 
+      });
     }
     function removeProject(path) {
       return $q(function(resolve, reject) {

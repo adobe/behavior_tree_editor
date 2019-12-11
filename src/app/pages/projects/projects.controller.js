@@ -101,7 +101,8 @@
         .openProject(path)
         .then(function() {
           $state.go('editor');
-        }, function() {
+        }, function(e) {
+          console.error(e);
           notificationService.error(
             'Invalid file',
             'Couldn\'t open the project file.'
