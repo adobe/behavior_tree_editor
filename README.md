@@ -7,7 +7,7 @@ Editor](https://github.com/behavior3/behavior3editor/)
 
 > See the [Releases tab](https://git.corp.adobe.com/BotTestingFramework/behavior_tree_editor/releases) to download a native (Mac only) application that will save and load flies from disk (recommended).
 >
-> You can also access a [web app](https://git.corp.adobe.com/pages/BotTestingFramework/behavior_tree_editor/#/dash/home) version.  Your data will be saved in your browser's local storage. Use "Project > Import > Project as JSON" and "Project > Export > Project as JSON" to load/save from/to a local source controlled .json file for running the tests.
+> You can also access a [web app](https://git.corp.adobe.com/pages/BotTestingFramework/behavior_tree_editor/#/dash/home) version. Your data will be saved in your browser's local storage. Use "Project > Import > Project as JSON" and "Project > Export > Project as JSON" to load/save from/to a local source controlled .json file for running the tests.
 
 ![interface preview](preview.png)
 
@@ -22,16 +22,15 @@ Editor](https://github.com/behavior3/behavior3editor/)
 - Del key (fn+delete on a macbook) deletes a node
 - Each node has details/instructions in its description
 - Be sure to save via the menu icon or cntr+s or "Project/Save project"
-- You can create custom nodes via "Project/New node" or the Nodes sidebar divider.  Only custom nodes with a "Name" and "Category" of "action" can be parsed, and work just like the generic function nodes.
+- You can create custom action nodes via "Project/New node" or the Nodes sidebar divider. They should have a unique name, the "actions" category, and a title in the same format as the generic function action.
 - Using "<key_name>" in a node's title will render the value for that property's key
-- You can use "templates" in titles and properties to reference properties on the tree's root node.  Templates look like "{{key_name}}".
+- You can use "templates" in titles and properties to reference properties on the tree's root node. Templates look like "{{key_name}}".
 
 ## Main features
 
-- **Custom Nodes**: you can create your own node types inside one of the three basic categories - *composite*, *decorator*, *action*.
+- **Custom Nodes**: you can create your own node types inside one of the three basic categories - _composite_, _decorator_, _action_.
 - **Individual Node Properties**: you can modify node titles, description and custom properties.
 - **Manual and Auto Organization**: organize by dragging nodes around or just type "a" to auto organize the whole tree.
 - **Create and Manage Multiple Trees**: you can create and manage an unlimited number of trees.
 - **Import and Export to JSON**: export your project, tree or nodes to JSON format.
 - Import them back. Use JSON on your own custom library or tool. You decide.
-
