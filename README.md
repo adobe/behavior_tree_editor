@@ -23,6 +23,7 @@ Editor](https://github.com/behavior3/behavior3editor/)
 - Each node has details/instructions in its description
 - Be sure to save via the menu icon or cntr+s or "Project/Save project"
 - You can create custom action nodes via "Project/New node" or the Nodes sidebar divider. They should have a unique name, the "actions" category, and a title in the same format as the generic function action.
+- See [`mix bots.extract_actions`](https://git.corp.adobe.com/pages/BotTestingFramework/bot_army/Mix.Tasks.Bots.ExtractActions.html) on how to import custom actions from your code base.
 - Using "<key_name>" in a node's title will render the value for that property's key
 - You can use "templates" in titles and properties to reference properties on the tree's root node. Templates look like "{{key_name}}".
 
