@@ -1,0 +1,15 @@
+{
+  "name"    : "behaviorTreeEditor",
+  "version" : "0.3.0",
+  "main"    : "desktop.js",
+  "window": {
+    "title"      : "Behavior Tree Editor",
+    "position"   : "center",
+    "toolbar"    : false,
+    "frame"      : true,
+    "width"      : 1000,
+    "height"     : 800,
+    "min_width"  : 1000,
+    "min_height" : 800
+  }
+}
